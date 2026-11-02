@@ -1,4 +1,9 @@
 
+      - name: Fix SDK Manager path
+        run: |
+          SDK="$HOME/.buildozer/android/platform/android-sdk"
+          mkdir -p "$SDK/tools/bin"
+          ln -sf "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "$SDK/tools/bin/sdkmanager 
 name: Build MUNAF APK
 
 on:
